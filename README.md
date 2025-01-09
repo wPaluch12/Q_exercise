@@ -90,15 +90,20 @@ vwap [data; startDate; endDate; listOfSymbols]
    ```q
    vwap [trade; 2019.10.03; 2019.10.05; `AMD`MSFT]
 
-   sym | high    
-----| --------
-AMD | 24.59235
-MSFT| 27.75111
    ```
 
 2. **VWAP for a Single Symbol:**
    ```q
    vwap [trade; 2019.10.03; 2019.10.05; `AMD]
+   ```
+
+3. **VWAP error wrong date range:**
+   ```q
+   vwap [trade; 2019.10.06; 2019.10.05; `AMD]
+   ```
+4. **VWAP error wrong date format:**
+   ```q
+   vwap [trade; 2019.10; 2019; `AMD]
    ```
 
 ---
