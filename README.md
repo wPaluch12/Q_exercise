@@ -58,15 +58,15 @@ The function is implemented in the `vwap.q` file.
 ---
 
 #### **Loading the Data and Function**
-To begin, load the `trade.csv` data into a table using the following code:
+To begin, start the q session and load the `trade.csv` data into a table using the following code:
 ```q
 colnames: `date`open`high`low`close`volume`sym
-.Q.fs[{`trade insert flip colnames!("DFFFFIS";",")0:x}]`:trade.csv
+.Q.fs[{`trade insert flip colnames!("DFFFFIS";",")0:x}]`:Q_exercise/trade.csv
 ```
 
 Next, load the VWAP function:
 ```q
-\l Q_playground/function_vwamp.q
+\l Q_exercise/vwap.q 
 ```
 
 ---
@@ -89,6 +89,11 @@ vwap [data; startDate; endDate; listOfSymbols]
 1. **VWAP for Multiple Symbols:**
    ```q
    vwap [trade; 2019.10.03; 2019.10.05; `AMD`MSFT]
+
+   sym | high    
+----| --------
+AMD | 24.59235
+MSFT| 27.75111
    ```
 
 2. **VWAP for a Single Symbol:**
